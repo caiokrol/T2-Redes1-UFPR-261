@@ -92,12 +92,20 @@ control SwitchIngress(
                 meta.aux3 = reg_token_P3.read(0);
                 meta.aux4 = reg_token_P4.read(0);
 
-                    if( hdr.token.token[127:96] != meta.aux1 || 
-                        hdr.token.token[95:64] != meta.aux2 ||
-                        hdr.token.token[63:32] != meta.aux3 ||
-                        hdr.token.token[31:0] != meta.aux4)
-                    {
-                        ig_dprsr_md.drop_ctl = 1; //Acesso negado (Dropa o pacote porque nao bateu o token, se nao passa normalmente)
+                    if (hdr.token.token[127:96] != meta.aux1) {
+                        ig_dprsr_md.drop_ctl = 1; // Acesso negado
+                    }
+
+                    if (hdr.token.token[95:64] != meta.aux2) {
+                        ig_dprsr_md.drop_ctl = 1; // Acesso negado
+                    }
+
+                    if (hdr.token.token[63:32] != meta.aux3) {
+                        ig_dprsr_md.drop_ctl = 1; // Acesso negado
+                    }
+
+                    if (hdr.token.token[31:0] != meta.aux4) {
+                        ig_dprsr_md.drop_ctl = 1; // Acesso negado
                     }
             }
 
@@ -107,7 +115,7 @@ control SwitchIngress(
 
         } else {
             ig_dprsr_md.drop_ctl = 1; // 5.Dropa se nao for valido a leitura do cabeçalho
-        }
+          }
 
     }
 }

@@ -25,6 +25,7 @@ else
 fi
 
 ARCH=tofino
+PROJECT_SRC=/home/dev/project
 
 cd $SDE_INSTALL/bin
 
