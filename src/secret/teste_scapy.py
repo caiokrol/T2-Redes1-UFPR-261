@@ -28,9 +28,9 @@ def disparar(nome_teste, pacote, pausa=1.5):
 # 3. BATERIA DE TESTES
 # ---------------------------------------------------------
 print("="*60)
-print(" INICIANDO BATERIA DE TESTES DO FIREWALL P4 ")
+print(" INICIANDO TESTES FIREWALL P4 ")
 print("="*60)
-print(" Fique de olho no terminal do tcpdump (veth8)! ")
+print(" tcpdump observando (veth8)! ")
 print(" Apenas os pacotes [TESTE 1B] e [TESTE 5C] devem chegar.")
 print("="*60 + "\n")
 
